@@ -1,0 +1,26 @@
+<p>post-list works!</p>
+
+
+<button (click)="gotopostcreate()"  class="btn btn-warning " >  post create</button>
+<button (click)="gotopostDetail(2)" class="btn btn-warning" >  post detail(2) </button>
+<a routerLink="/post-update" [queryParams]="{id:5}">Post update</a>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>userid</th>
+      <th>title</th>
+      <th>body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of posts">
+      <td>{{p.id}}</td>
+      <td>{{p.userId}}</td>
+      <td>{{p.title}}</td>
+      <td>{{p.body}}</td>
+      <td> <a class="btn btn-primary" [routerLink]="['/post-detail',p.id]">Detay</a> </td>
+    </tr>
+  </tbody>
+</table>
